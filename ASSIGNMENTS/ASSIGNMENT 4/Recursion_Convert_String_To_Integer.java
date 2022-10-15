@@ -7,7 +7,9 @@ public class Recursion_Convert_String_To_Integer {
 
         if(a.length() == 0)
         {
+            // ans = ans*10 + (int)(a.charAt(0));
             System.out.println(ans);
+            return;
             // return ans;
         }
 
