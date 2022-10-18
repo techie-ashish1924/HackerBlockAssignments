@@ -2,27 +2,28 @@ import java.util.Scanner;
 
 public class Recursion_Convert_String_To_Integer {
 
-    public static void Calculate(String a, int ans)
+    public static void Calculate(String a, int ans,int mul,int ind)
     {
 
-        if(a.length() == 0)
+        if(ind < 0)
         {
-            // ans = ans*10 + (int)(a.charAt(0));
             System.out.println(ans);
             return;
-            // return ans;
         }
+        char z = a.charAt(ind);
+        int z1 = z - '0';
+        ans = ans + z1 * mul;
 
-        ans = ans * 10 + (int)(a.charAt(a.length()-1));
-        // char ch = a.charAt(a.length()-1);
-        Calculate(a.substring(0, a.length()-1), ans);
+        Calculate(a, ans, mul*10, ind-1);
+        // Calculate(a, (int)(a.charAt(a.length()-1))*mul,mul*10,ind-1);
+
     }
 
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
-        String a = sc.next();
-        Calculate(a, 0);
+        String a = sc.nextLine();
+        Calculate(a, 0,1,a.length()-1);
     }
     
 }
