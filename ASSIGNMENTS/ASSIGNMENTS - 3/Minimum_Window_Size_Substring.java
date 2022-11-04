@@ -1,63 +1,77 @@
 import java.util.Scanner;
 
 public class Minimum_Window_Size_Substring {
-    public static int Minimum(String A, String B)
+    public static String Minimum(String A, String B)
     {
         int strt = 0;
         int end = 0;
         int ans = Integer.MAX_VALUE;
         int count = 0;
         int Freq[] = new int[256];
-        for(int i=0;i<B.length();i++)
+        String res = "";
+
+
+        int org[] = new int[256];
+        for (int i = 0; i < B.length(); i++) 
         {
-            Freq[B.charAt(i)]++;
+            char ch = B.charAt(i);
+            org[ch] += 1;   
         }
-        String result = "";
 
         while(end < A.length())
         {
             char ch = A.charAt(end);
-            if(B.contains(String.valueOf(ch)) && Freq[ch] >= 1)
+            if(B.contains(String.valueOf(ch)) && Freq[ch] >= org[ch])
             {
-                System.out.println("B Contains " + A.charAt(end));
-                // count++;
+                
                 Freq[ch]++;
             }
-            // Freq[ch]++;
-
-            while(count > B.length()  && strt <= end)
+            else
             {
+                count++;
+                Freq[ch]++;
+            }
+            System.out.println("Out side loop : start and end : " + strt + "  " + end);
+            while(count >= B.length()  && strt <= end)
+            {
+                if(count == B.length())
+                {
+                    if(ans > (end-strt+1))
+                    {
+                        System.out.println("start and end : " + strt + "  " + end);
+                        res = A.substring(strt,end+1);
+                    }
+
+                }
+    
                 char ch2 = A.charAt(strt);
-                if(B.contains(String.valueOf(ch2)) && Freq[ch2] > 1)
+                if((B.contains(String.valueOf(ch2)) && Freq[ch2] > org[ch2]))
+                {
+                    Freq[ch2]--;
+                    // count--;
+            
+                }
+                else
                 {
                     count--;
+                    Freq[ch2]--;
+                    // strt++;
                 }
-                Freq[ch2]--;
                 strt++;
-            }
-            if(count == B.length())
-            {
-                System.out.println("end - strt + 1");
-                ans = Math.min(ans, end - strt + 1);
-                // if (ans < end-strt+1)
-                // {
-                    // result = String.valueOf(A.substring(strt, end+1));
-                    // System.out.println(result);
-                    // ans = end-strt+1;
-                // }
             }
             end++;
         }
-        return ans;
+        // System.out.println(res);
+        return res;
     }
 
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
+        String a = "ADOBECODEBANC";
+        String b = "ABC";
         // String a = sc.next();
         // String b = sc.next();
-        String a ="ADOBECODEBANC";
-        String b = "ABC";
         System.out.println(Minimum(a, b));
 
         // System.out.println(a);

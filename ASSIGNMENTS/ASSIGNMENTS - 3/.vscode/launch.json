@@ -1,0 +1,130 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+
+
+
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Can_You_Read_This",
+            "request": "launch",
+            "mainClass": "Can_You_Read_This",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Finding_CB_Number",
+            "request": "launch",
+            "mainClass": "Finding_CB_Number",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch From_Biggest_Number",
+            "request": "launch",
+            "mainClass": "From_Biggest_Number",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Kartik_Bhaiya_And_String",
+            "request": "launch",
+            "mainClass": "Kartik_Bhaiya_And_String",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Minimum_Window_Size_Substring",
+            "request": "launch",
+            "mainClass": "Minimum_Window_Size_Substring",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Non_Repeating_Character",
+            "request": "launch",
+            "mainClass": "Non_Repeating_Character",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Playing_With_GoodString",
+            "request": "launch",
+            "mainClass": "Playing_With_GoodString",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch SUbArray_Having_Product_Less_Than_K",
+            "request": "launch",
+            "mainClass": "SUbArray_Having_Product_Less_Than_K",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch String_Compressions",
+            "request": "launch",
+            "mainClass": "String_Compressions",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch String_Count_Palindrome_Substring",
+            "request": "launch",
+            "mainClass": "String_Count_Palindrome_Substring",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch String_Difference_In_Asci_Codes",
+            "request": "launch",
+            "mainClass": "String_Difference_In_Asci_Codes",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch String_IsPalindrome",
+            "request": "launch",
+            "mainClass": "String_IsPalindrome",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch String_Max_Frequency_Character",
+            "request": "launch",
+            "mainClass": "String_Max_Frequency_Character",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch String_Odd_Even_Character",
+            "request": "launch",
+            "mainClass": "String_Odd_Even_Character",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch String_Remove_Duplicates_Consecutive",
+            "request": "launch",
+            "mainClass": "String_Remove_Duplicates_Consecutive",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch String_Toggle_Case",
+            "request": "launch",
+            "mainClass": "String_Toggle_Case",
+            "projectName": "ASSIGNMENTS - 3_245224fa"
+        }
+    ]
+}
