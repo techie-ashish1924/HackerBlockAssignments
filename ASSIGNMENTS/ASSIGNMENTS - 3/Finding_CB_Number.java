@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/* import java.util.Scanner;
 
 public class Finding_CB_Number {
 
@@ -36,7 +36,6 @@ public class Finding_CB_Number {
             for(int j = i ;j<k.length();j++)
             {
                 res = res + k.charAt(j);
-                // String z = "" + k.charAt(j);
                 System.out.println(res);
                 if(res.length() != k.length())
                 {
@@ -50,27 +49,10 @@ public class Finding_CB_Number {
                     System.out.println("------------------------------------------");
                 }
             }
-                // else{
-                    // break;
-                // }
+                
             }
         }
-        // for(int len = 1;len <= k.length();len++)
-        // {
-            // for(int j=len; j<= k.length();j++)
-            // {
-                // int i = j - len;
-
-                // if(CB_Number(k.substring(i, j)))
-                // {
-                    // System.out.println(k.substring(i, j));
-                    // sum++;
-                    // System.out.println(sum);
-                    // break;
-                // }
-            // }
-            // 
-        // }
+    
         return sum;
     }
     public static void main(String[] args) {
@@ -80,4 +62,70 @@ public class Finding_CB_Number {
         System.out.println(Count(str1));
     }
     
+}
+
+*/
+
+
+import java.util.*;
+public class Finding_CB_Number 
+{
+    public static void main(String args[]) {
+       Scanner sc=new Scanner(System.in);
+	   int n1=sc.nextInt();
+	   String s1=sc.next();
+	   boolean visited[]=new boolean[s1.length()];
+	   int c=0;
+	   for(int len=1;len<=s1.length();len++){
+		   for(int pos=0;pos<=s1.length()-len;pos++){
+			   int end=pos+len;
+			   String str=s1.substring(pos,end);
+			   if(CBcheck(Long.valueOf(str),pos,end)&&isValid(visited,pos,end)){
+				   c++;
+				   for(int k=pos;k<end;k++)
+				   {
+				    visited[k]=true;
+				   }
+			   }
+		   }
+	   }
+	   System.out.print(c);
+    }
+
+
+	public static boolean CBcheck(long  num1,int start,int end)
+	{
+		if(num1 == 0 || num1 == 1)
+		{
+			return false;
+		}
+		int x[]={2,3,5,7,11,13,17,19,23,29};
+		for(int i=0;i<10;i++)
+		{
+			if(num1 == (long)x[i])
+			{
+				return true;
+			}
+		}
+		for(int i=0;i<10;i++)
+		{
+			if(num1 % x[i]==0)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+
+	public static boolean isValid(boolean visited1[],int start,int end)
+	{
+		for(int i=start;i<end;i++){
+			if(visited1[i])
+			{
+				return false;
+			}
+		}
+		return true;
+	}
 }

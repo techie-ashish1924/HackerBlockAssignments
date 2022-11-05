@@ -26,20 +26,21 @@ public class Minimum_Window_Size_Substring {
                 
                 Freq[ch]++;
             }
-            else
+            else if(B.contains(String.valueOf(ch)) && Freq[ch] < org[ch])
             {
                 count++;
                 Freq[ch]++;
             }
-            System.out.println("Out side loop : start and end : " + strt + "  " + end);
+            // System.out.println("Out side loop : start and end : " + strt + "  " + end);
             while(count >= B.length()  && strt <= end)
             {
                 if(count == B.length())
                 {
-                    if(ans > (end-strt+1))
+                    if(ans >= (end-strt+1))
                     {
                         System.out.println("start and end : " + strt + "  " + end);
                         res = A.substring(strt,end+1);
+                        System.out.println(res);
                     }
 
                 }
@@ -51,7 +52,7 @@ public class Minimum_Window_Size_Substring {
                     // count--;
             
                 }
-                else
+                else if((B.contains(String.valueOf(ch2)) && Freq[ch2] <= org[ch2]))
                 {
                     count--;
                     Freq[ch2]--;
@@ -68,8 +69,13 @@ public class Minimum_Window_Size_Substring {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
-        String a = "ADOBECODEBANC";
-        String b = "ABC";
+        // String a = "ADOBECODEBANC";
+
+        String a= "cabwefgewcwaefgcf";
+        String b = "cae";
+
+
+        // String b = "ABC";
         // String a = sc.next();
         // String b = sc.next();
         System.out.println(Minimum(a, b));
