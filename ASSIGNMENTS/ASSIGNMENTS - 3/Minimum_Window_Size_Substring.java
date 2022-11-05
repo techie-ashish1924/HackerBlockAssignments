@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/* import java.util.Scanner;
 
 public class Minimum_Window_Size_Substring {
     public static String Minimum(String A, String B)
@@ -84,4 +84,52 @@ public class Minimum_Window_Size_Substring {
         // System.out.println(b);
     }
     
+}
+
+*/
+
+import java.util.*;
+public class Main {
+    public static void main (String args[]) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.next();
+        String t1 = sc.next();
+             int[] arr = new int[256];
+        for(int i = 0 ; i <t1.length();i++)
+        {
+            arr[t1.charAt(i)]++;
+        }
+        int count = t1.length();
+        int start = 0;
+        int end = 0;
+        int min = Integer.MAX_VALUE;
+        int minStart = 0;
+        int minEnd = 0;
+        while(end<s1.length())
+        {
+            if(arr[s1.charAt(end)]>0)
+            {
+                count--;
+            }
+            arr[s1.charAt(end)]--;
+            end++;
+            while(count==0)
+            {
+                if(end-start<min)
+                {
+                    min = end-start;
+                    minStart = start;
+                    minEnd = end;
+                }
+                arr[s1.charAt(start)]++;
+                if(arr[s1.charAt(start)]>0)
+                {
+                    count++;
+                }
+                start++;
+            }
+        }
+        System.out.println(s1.substring(minStart,minEnd));
+    }
 }
