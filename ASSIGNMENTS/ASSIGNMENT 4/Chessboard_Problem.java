@@ -3,9 +3,9 @@ public class Chessboard_Problem {
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str1 = sc.next();
-        char ch[] = str1.toCharArray();
+        char ch1[] = str1.toCharArray();
 		List<String> a = new ArrayList<>();
-        permute_func(0, str1.length(), ch, str1, a);
+        permute_func(0, str1.length(), ch1, str1, a);
 		Collections.sort(a);
 		for(String str : a)
 		System.out.println(str);
@@ -25,9 +25,9 @@ public class Chessboard_Problem {
         }
     }
 
-    public static void swap_func(int i, int j, char[] ch) {
-        char temp = ch[i];
-        ch[i] = ch[j];
-		ch[j] = temp;
+    public static void swap_func(int f, int l, char[] ch) {
+        char temp = ch[f];
+        ch[f] = ch[l];
+		ch[l] = temp;
     }
 }
