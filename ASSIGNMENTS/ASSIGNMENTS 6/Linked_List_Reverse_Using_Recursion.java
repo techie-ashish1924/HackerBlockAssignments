@@ -45,9 +45,11 @@ public class Linked_List_Reverse_Using_Recursion {
     void Reverse_Recursion(Node prev, Node curr, Node ahead)
     {
 
-        if (ahead == null)
+        if (ahead.next == null)
         {
-            head = prev;
+            curr.next = prev;
+            ahead.next = curr;
+            head = ahead;
             return;
         }
         curr.next = prev;
