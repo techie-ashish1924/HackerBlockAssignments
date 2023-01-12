@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Delete_Node_Linked_List {
 
@@ -6,6 +7,11 @@ public class Delete_Node_Linked_List {
 
         int data;
         Node next;
+
+        Node() {
+        }
+
+        Node (int data) {this.data = data;}
     }
 
     static Node head;
@@ -41,28 +47,26 @@ public class Delete_Node_Linked_List {
         System.out.println("NULL");
     }
 
-    public void deleteNode()
-    {
+    public void deleteNode() {
+        Stack<Node> st = new Stack<>();
+
         Node temp = head;
-        Node dummy = new Node();
-        Node dummy_copy = dummy;
 
-        while(temp.next != null)
-        {
-            if (temp.data < temp.next.data) {
-                dummy.next = temp.next;
-                // dummy = dummy.next;
-            }
-            else {
-                dummy.next = temp;
-                dummy = dummy.next;
-            }
-
+        while (temp != null) {
+            while (!st.isEmpty() && st.peek().data < temp.data)
+                st.pop();
+            st.push(new Node(temp.data));
             temp = temp.next;
-
         }
+
+        Node tHead = new Node();
+        Node s = tHead;
+        while (!st.isEmpty()) {
+            tHead.next = st.pop();
+            tHead = tHead.next;
+        }
+
         
-        head = dummy_copy.next;
     }
 
     public static void main(String[] args) {
